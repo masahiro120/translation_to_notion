@@ -1,6 +1,6 @@
 # Translation & Send Notion
 
-コピーした英文を翻訳し、結果をNotionのページに貼り付けるスクリプト
+コピーした英文を翻訳し，結果をNotionのページに貼り付けるスクリプト
 
 ## インストール
 1. リポジトリをクローン
@@ -21,14 +21,12 @@ $ pip install -r requirements.txt
 
 2. 翻訳を張り付けるNotionのページを設定   
    - `NOTION_PAGE_URL`に送信先のNotionページのURLを設定
-      - NotionページにAPIキーをコネクト
-
-<img width="300" src="readme_image/notion.png">
+      - NotionページにAPIキーをコネクト\n<img width="300" src="readme_image/notion.png">
 
 
 ## 使い方
 
-- `shortcut.bat`または`shortcut_split.bat`を実行することで、スクリプトが起動
+- `shortcut.bat`または`shortcut_split.bat`を実行することで，スクリプトが起動
 ```
 $ .\shortcut.bat
 $ .\shortcut_split.bat
@@ -42,9 +40,9 @@ $ .\shortcut_split.bat
 
 ## ショートカットの利用
 - `shortcut.bat`または`shortcut_split.bat`のショートカットをデスクトップに配置しプロパティからコマンドを設定することでコマンドから実行可能
-   <img width="200" src="readme_image\property.png">
+- <img width="200" src="readme_image\property.png">
 
 ## 注意点
 - Windows環境での使用を想定（コマンドプロンプト，PowerShell等）
-- このスクリプトは、英文から日本語への翻訳を想定している
-   - 他の言語に対応させる場合は、`translation.py`内の`source_lang`および`target_lang`を適宜変更
+- このスクリプトは，英文から日本語への翻訳を想定している
+   - 他の言語に対応させる場合は，`translation.py`内の`source_lang`および`target_lang`を適宜変更
