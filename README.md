@@ -1,34 +1,50 @@
-# 英文翻訳 & Notion 送信スクリプト
+# Translation & Send Notion
 
-このスクリプトは、英文を自動で翻訳し、結果をNotionのデータベースに送信するものです。`translation.py`を中心に、`shortcut.bat`と`shortcut_split.bat`というバッチファイルを使用して、Windows環境で簡単に実行できるようになっています。
+コピーした英文を翻訳し、結果をNotionのページに貼り付けるスクリプトです。
 
-## 前提条件
+## インストール
+1. リポジトリをクローン
+```
+$ git clone https://github.com/masahiro120/translation_to_notion.git
+```
 
-- Pythonがインストールされていること
-- `requests`, `pyperclip`, `deepl` Pythonライブラリがインストールされていること
-- DeepL APIキーが必要です（`DEEPL_API_KEY`に設定）
-- Notion APIキーとデータベースIDが必要です（`NOTION_API_KEY`, `NOTION_DATABASE_ID`に設定）
+2. ライブラリをインストール
+```
+$ pip install -r requirements.txt
+```
 
-## 設定
+## 事前設定
 
-1. `translation.py`に必要なAPIキーを設定します。
-   - `DEEPL_API_KEY`にDeepLのAPIキーを設定してください。
-   - `NOTION_API_KEY`にNotionのIntegration APIキーを設定してください。
-   - `NOTION_PAGE_URL`に送信先のNotionページのURLを設定してください。これにより、`NOTION_DATABASE_ID`が自動で設定されます。
+1. `translation.py`に必要なAPIキーを設定
+   - `DEEPL_API_KEY`に[DeepLのAPIキー](https://www.deepl.com/pro-api/?utm_term=deepl%20api&utm_campaign=JP%7CSearch%7CC%7CBrand-API%7CEnglish%7CExact&utm_source=adwords&utm_medium=ppc&hsa_acc=1083354268&hsa_cam=21005532228&hsa_grp=158625966453&hsa_ad=690485455825&hsa_src=g&hsa_tgt=kwd-900300572383&hsa_kw=deepl%20api&hsa_mt=e&hsa_net=adwords&hsa_ver=3&gad_source=1&gclid=CjwKCAjwwr6wBhBcEiwAfMEQs69dAe_gedSpkVswsp62qzmaeFiAdN220cySqSJNBqxLKdxak9TouBoCvzkQAvD_BwE "DeepLのAPIキー")を設定
+   - `NOTION_API_KEY`に[NotionのAPIキー](https://developers.notion.com/ "NotionのAPIキー")を設定
+
+2. 翻訳を張り付けるNotionのページを設定   
+   - `NOTION_PAGE_URL`に送信先のNotionページのURLを設定
+      - NotionページにAPIキーをコネクト
+
+<img width="300" src="readme_image/notion.png">
+
 
 ## 使い方
 
-1. `shortcut.bat`または`shortcut_split.bat`を実行することで、スクリプトが起動します。
-   - `shortcut.bat`は、クリップボードの内容を直接翻訳してNotionに送信します。
-   - `shortcut_split.bat`は、クリップボードの内容が長文の場合に、分割してから翻訳しNotionに送信します。これは、DeepL APIの文字数制限を回避するために使用します。
+- `shortcut.bat`または`shortcut_split.bat`を実行することで、スクリプトが起動
+```
+$ .\shortcut.bat
+$ .\shortcut_split.bat
+```
+   - クリップボードの内容を翻訳し`NOTION_PAGE_URL`の左側に原文，右側に日本語訳を張り付ける
+      - それぞれ文ごとに改行を行っている
+   - 英文がページをまたぐなどで分かれている場合は`shortcut_split.bat`，分かれていない場合は`shortcut.bat`を実行
+      - `shortcut_split.bat`実行時はスクリプト起動後分割先をコピーし，Spaceキーを入力後Enterキーを押すことで翻訳対象に追加可能
+      - Spaceキーを入力せず，Enterキーを押すことで翻訳を実行
 
-2. スクリプト実行後、翻訳された文書がNotionに自動的に送信されます。
+
+## ショートカットの利用
+- `shortcut.bat`または`shortcut_split.bat`のショートカットをデスクトップに配置しプロパティからコマンドを設定することでコマンドから実行可能
+   <img width="200" src="readme_image\property.png">
 
 ## 注意点
-
-- このスクリプトは、英文から日本語への翻訳を想定しています。他の言語に対応させる場合は、`translation.py`内の`source_lang`および`target_lang`を適宜変更してください。
-- Notion APIのバージョンアップに伴い、スクリプトの修正が必要になる場合があります。
-
-## ライセンス
-
-このスクリプトはフリーソフトウェアです。自由に使用、修正、配布が可能ですが、すべて自己責任でお願いします。
+- Windows環境での使用を想定（コマンドプロンプト，PowerShell等）
+- このスクリプトは、英文から日本語への翻訳を想定している
+   - 他の言語に対応させる場合は、`translation.py`内の`source_lang`および`target_lang`を適宜変更
