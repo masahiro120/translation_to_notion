@@ -21,7 +21,8 @@ $ pip install -r requirements.txt
 
 2. 翻訳を張り付けるNotionのページを設定   
    - `NOTION_PAGE_URL`に送信先のNotionページのURLを設定
-      - NotionページにAPIキーをコネクト\n<img width="300" src="readme_image/notion.png">
+      - NotionページにAPIキーをコネクト
+      > <img width="300" src="readme_image/notion.png">
 
 
 ## 使い方
@@ -40,7 +41,7 @@ $ .\shortcut_split.bat
 
 ## ショートカットの利用
 - `shortcut.bat`または`shortcut_split.bat`のショートカットをデスクトップに配置しプロパティからコマンドを設定することでコマンドから実行可能
-- <img width="200" src="readme_image\property.png">
+   > <img width="200" src="readme_image\property.png">
 
 ## 注意点
 - Windows環境での使用を想定（コマンドプロンプト，PowerShell等）
