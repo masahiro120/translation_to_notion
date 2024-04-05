@@ -17,7 +17,7 @@ $ pip install -r requirements.txt
 
 1. `translation.py`に必要なAPIキーを設定
    - `DEEPL_API_KEY`に[DeepLのAPIキー](https://www.deepl.com/pro-api/?utm_term=deepl%20api&utm_campaign=JP%7CSearch%7CC%7CBrand-API%7CEnglish%7CExact&utm_source=adwords&utm_medium=ppc&hsa_acc=1083354268&hsa_cam=21005532228&hsa_grp=158625966453&hsa_ad=690485455825&hsa_src=g&hsa_tgt=kwd-900300572383&hsa_kw=deepl%20api&hsa_mt=e&hsa_net=adwords&hsa_ver=3&gad_source=1&gclid=CjwKCAjwwr6wBhBcEiwAfMEQs69dAe_gedSpkVswsp62qzmaeFiAdN220cySqSJNBqxLKdxak9TouBoCvzkQAvD_BwE "DeepLのAPIキー")を設定
-   - `NOTION_API_KEY`に[NotionのAPIキー](https://developers.notion.com/ "NotionのAPIキー")を設定
+   - `NOTION_API_KEY`に[NotionのAPIキー](https://www.notion.so/my-integrations "NotionのAPIキー")を設定
 
 2. 翻訳を張り付けるNotionのページを設定   
    - `NOTION_PAGE_URL`に送信先のNotionページのURLを設定
