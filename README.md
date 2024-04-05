@@ -1,4 +1,4 @@
-# Translation & Send Notion
+# Translation & Send to Notion
 
 コピーした英文を翻訳し，結果をNotionのページに貼り付けるスクリプト
 
