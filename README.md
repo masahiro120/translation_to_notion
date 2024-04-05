@@ -40,7 +40,7 @@ $ .\shortcut_split.bat
 
 
 ## ショートカットの利用
-- `shortcut.bat`または`shortcut_split.bat`のショートカットをデスクトップに配置しプロパティからコマンドを設定することでコマンドから実行可能
+- `shortcut.bat`または`shortcut_split.bat`のショートカットをデスクトップに配置しプロパティからコマンドを設定することでコマンドから実行可能（Windowsのみ）
    > <img width="200" src="readme_image\property.png">
 
 ## 注意点
